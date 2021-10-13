@@ -66,7 +66,7 @@ internal class ListViewModelTest : ViewModelTest() {
         viewModel.fetchData()
         testObservable.assertValueSequence(
             listOf(
-                ToDoListState.UnInitialised,
+                ToDoListState.UnInitialized,
                 ToDoListState.Loading,
                 ToDoListState.Success(mockList)
             )
@@ -94,10 +94,11 @@ internal class ListViewModelTest : ViewModelTest() {
         viewModel.deleteAll()
         testObservable.assertValueSequence(
             listOf(
-                ToDoListState.UnInitialised,
+                ToDoListState.UnInitialized,
                 ToDoListState.Loading,
                 ToDoListState.Success(listOf())
             )
         )
     }
+
 }

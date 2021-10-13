@@ -4,7 +4,7 @@ import com.example.aoppart5chapter01.data.entity.ToDoEntity
 
 sealed class ToDoListState {
 
-    object UnInitialised : ToDoListState()
+    object UnInitialized : ToDoListState()
 
     object Loading : ToDoListState()
 
