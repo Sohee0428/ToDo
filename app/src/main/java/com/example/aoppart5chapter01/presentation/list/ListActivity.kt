@@ -48,8 +48,11 @@ internal class ListActivity : BaseActivity<ListViewModel>(), CoroutineScope {
         }
 
         addToDoBtn.setOnClickListener {
-            DetailActivity.getIntent(this@ListActivity, DetailMode.WRITE)
-            DetailActivity.FETCH_REQUEST_CODE
+            startActivityForResult(
+                DetailActivity.getIntent(this@ListActivity, DetailMode.WRITE),
+                DetailActivity.FETCH_REQUEST_CODE
+            )
+
         }
     }
 
