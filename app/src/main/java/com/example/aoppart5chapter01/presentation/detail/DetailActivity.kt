@@ -16,7 +16,7 @@ internal class DetailActivity : BaseActivity<DetailViewModel>() {
 
     override val viewModel: DetailViewModel by viewModel {
         parametersOf(
-            intent.getStringExtra(DETAIL_MODE_KEY),
+            intent.getSerializableExtra(DETAIL_MODE_KEY) as DetailMode,
             intent.getLongExtra(TODO_ID_KEY, -1)
         )
     }
@@ -24,7 +24,6 @@ internal class DetailActivity : BaseActivity<DetailViewModel>() {
     companion object {
         const val TODO_ID_KEY = "ToDoId"
         const val DETAIL_MODE_KEY = "DetailMode"
-
         const val FETCH_REQUEST_CODE = 10
 
         fun getIntent(context: Context, detailMode: DetailMode) =
